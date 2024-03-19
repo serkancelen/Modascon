@@ -1,0 +1,19 @@
+﻿@model IEnumerable<IdentityRole>
+
+<div class="text-center my-4">
+    <div class="display-6">Roles</div>
+</div>
+
+<div class="d-flex justify-content-end my-3">
+    <a class="btn btn-outline-success" asp-action="Create">
+        <span class="bi bi-plus"></span>
+        Create
+    </a>
+</div>
+
+<ul class="list-group">
+    @foreach (var role in Model)
+    {
+        <li class="list-group-item">@role.Name</li>
+    }
+</ul>

@@ -1,0 +1,15 @@
+﻿@page
+@model Modascon.Pages.DemoModel
+@{
+
+}
+<div class="my-5 text-center">
+    <div class="display-6">@Model.FullName</div>
+    <p class="text-danger">@HttpContext.Session.GetString("name")</p>
+    <form method="post" asp-page="/demo">
+        <div class="form-group">
+            <input class="form-control" name="name" placeholder="Enter Your Name" />
+            <input class="btn btn-primary my-3" type="submit" />
+        </div>
+    </form>
+</div>

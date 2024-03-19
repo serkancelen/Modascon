@@ -1,0 +1,98 @@
+﻿@using System.Globalization;
+@using Modascon.Infrastructure.Extensions;
+
+@model Product
+
+@*@if (Model != null)
+{
+    <h3>@Model.ProductName</h3>
+    <p>@Model.Price.ToString("C", CultureInfo.CurrentCulture)</p>
+
+    <div class="btn-group">
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Index">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+            <form id="@Model.Id" asp-page="/cart" method="post">
+                <input type="hidden" asp-for="Id">
+                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()">
+                <button type="submit" class="btn btn-outline-primary">
+                    <i class="fa fa-cart-plus"></i>
+                    Sepete Ekle
+                </button>
+            </form>
+        <a class="btn btn-outline-primary" asp-controller="Product" asp-action="Index">
+            <i class="fa-solid fa-list"></i> Products
+        </a>
+    </div>
+
+    @section Header
+    {
+    <div>
+        Header for only Get
+    </div>
+    }
+}
+else
+{
+    <p*@>Product is null.</p>
+}
+</div>
+<section class="product-detail section-padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-12">
+                <div class="product-thumb">
+                    <img src="@Model?.ImageUrl" class="img-fluid product-image" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="product-info d-flex">
+                    <div>
+                        <h2 class="product-title mb-0">@Model.ProductName</h2>
+
+                        <p class="product-p">Original package design from house</p>
+                    </div>
+
+                    <small class="product-price text-muted ms-auto mt-auto mb-5">@Model.Price.ToString("C2")</small>
+                </div>
+
+                <div class="product-description">
+
+                    <strong class="d-block mt-4 mb-2">Açıklama</strong>
+
+                    <p class="lead mb-5">@Model.Summary</p>
+                </div>
+
+                <div class="product-cart-thumb row">
+
+                    <div class="col-lg-6 col-12 mt-4 mt-lg-0">
+                        <form id="@Model.Id" asp-page="/cart" method="post">
+                            <input type="hidden" asp-for="Id">
+                            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()">
+                            <button type="submit" class="btn custom-btn cart-btn" data-bs-toggle="modal" data-bs-target="#cart-modal">Sepete Ekle</button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6 col-12 my-4 mt-4 mt-lg-0">
+                        <a class="btn custom-btn cart-btn" asp-controller="Product" asp-action="Index">
+                            <i class="fa-solid fa-list"></i> Alışverişe Devam
+                        </a>
+
+                    </div>
+
+                    <p>
+                        <a href="#" class="product-additional-link">Details</a>
+
+                        <a href="#" class="product-additional-link">Delivery and Payment</a>
+                    </p>
+
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

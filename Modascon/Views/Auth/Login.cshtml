@@ -1,0 +1,43 @@
+﻿@model LoginModel
+
+<section class="preloader">
+    <div class="spinner">
+        <span class="sk-inner-circle"></span>
+    </div>
+</section>
+
+<main>
+    <section class="sign-in-form section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto col-12">
+                    <h1 class="hero-title text-center mb-5">Giriş Yap</h1>
+                    <div class="row">
+                        <div class="col-lg-8 col-11 mx-auto">
+                            <form role="form" method="post" asp-controller="Auth" asp-action="Login">
+
+                                <div class="form-floating mb-4 p-0">
+                                    <input type="name" name="name" id="name" class="form-control" placeholder="Kullanıcı Adı" required>
+
+                                    <label for="email">Kullanıcı Adı</label>
+                                </div>
+                                <div class="form-floating p-0">
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Şifre" required>
+
+                                    <label for="password">Şifre</label>
+                                </div>
+                                <button type="submit" class="btn custom-btn form-control mt-4 mb-3">
+                                    Giriş Yap
+                                </button>
+
+                                <p class="text-center"><a asp-action="ForgotPassword">Şifrenizi Mi Unuttunuz?</a></p>
+                                <div class="div-separator w-50 m-auto my-5"><span></span></div>
+                                <p class="text-center">Hesabınız yok mu? <a asp-action="Register">Hemen Kayıt Ol</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

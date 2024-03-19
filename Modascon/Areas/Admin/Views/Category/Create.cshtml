@@ -1,0 +1,14 @@
+﻿@model CreateCategoryDto
+
+<h2>Category Oluştur Oluştur</h2>
+<hr />
+
+<form asp-controller="Category" asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="CategoryName"></label>
+        <input asp-for="CategoryName" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

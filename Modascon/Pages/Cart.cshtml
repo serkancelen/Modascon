@@ -1,0 +1,66 @@
+﻿@page "/cart"
+@model CartModel
+
+Cart(@Model.Cart.Lines.Count())
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Shopping Cart</h2>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var line in Model.Cart?.Lines ?? Enumerable.Empty<CartLine>())
+                {
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <img src="@line.Product.ImageUrl" class="mr-3 img-thumbnail" alt="Product Image" style="width: 80px;">
+                                <div class="media-body">
+                                    <h5 class="mt-0">@line.Product.ProductName</h5>
+                                </div>
+                            </div>
+                        </td>
+                        <td>@line.Quantity</td>
+                        <td>@line.Product.Price.ToString("c")</td>
+                        <td>@((line.Product.Price * line.Quantity).ToString("C2"))</td>
+                        <td>
+                            <form method="post" asp-page-handler="Remove">
+                                <input type="hidden" name="id" value="@line.Product.Id">
+                                <input type="hidden" name="returnUrl" value="@Model.ReturnUrl">
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash-alt"></i> Remove
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right font-weight-bold">Total :</td>
+                    <td colspan="2" class="text-right text-danger font-weight-bold">
+                        @Model.Cart?.ComputeTotalValue().ToString("C2")
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="text-center my-3">
+            <div class="btn-group">
+                <a class="btn btn-primary" href="@Model?.ReturnUrl">Continue Shopping</a>
+                <a class="btn btn-primary mx-2" asp-action="Checkout" asp-controller="Order">Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

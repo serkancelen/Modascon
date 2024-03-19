@@ -1,0 +1,21 @@
+﻿@using Modascon.Infrastructure.Extensions;
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <li class="nav-item">
+        <a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+    </li>
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <li class="nav-item">
+        <a class="nav-link bi bi-box-arrow-right" aria-current="page" asp-area="" asp-controller="Auth" asp-route-returnUrl="@Context.Request.PathAndQuery()" asp-action="Logout">Çıkış Yap</a>
+    </li> 
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link bi bi-box-arrow-in-right" aria-current="page" asp-area="" asp-controller="Auth" asp-route-returnUrl="@Context.Request.PathAndQuery()" asp-action="Login">Giriş Yap</a>
+    </li>
+}
+

@@ -1,0 +1,78 @@
+﻿<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card bg-primary text-white">
+                <div class="card-body text-center">
+                    <h6 class="card-subtitle mb-2">Ürünler</h6>
+                    <h5 class="card-title">Ürün Sayısı</h5>
+                    <h3 class="text-center display-3">
+                        @await Component.InvokeAsync("ProductSummary")
+                    </h3>
+                    <a asp-controller="Product" asp-action="Index" class="card-link text-white">Tüm Ürünler</a>
+                    <a asp-controller="Product" asp-action="Create" class="card-link text-white">Yeni Ürün Ekle</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card bg-danger text-white">
+                <div class="card-body text-center">
+                    <h6 class="card-subtitle mb-2">Kategoriler</h6>
+                    <h5 class="card-title">Kategori Sayısı</h5>
+                    <h3 class="text-center display-3">
+                        @await Component.InvokeAsync("CategorySummary")
+                    </h3>
+                    <a asp-controller="Category" asp-action="Index" class="card-link text-white">Tüm Kategoriler</a>
+                    <a asp-controller="Category" asp-action="Create" class="card-link text-white">Yeni Kategori Ekle</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card bg-info text-white">
+                <div class="card-body text-center">
+                    <h6 class="card-subtitle mb-2">Kullanıcılar</h6>
+                    <h5 class="card-title">Kullanıcı Sayısı</h5>
+                    <h3 class="text-center display-3">
+                        @await Component.InvokeAsync("UserSummary")
+                    </h3>
+                    <a asp-controller="User" asp-action="Index" class="card-link text-white">Tüm Kullanıcılar</a>
+                    <a asp-controller="User" asp-action="Create" class="card-link text-white">Yeni Kullanıcı Ekle</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card bg-warning text-white">
+                <div class="card-body text-center">
+                    <h6 class="card-subtitle mb-2">Siparişler</h6>
+                    <h5 class="card-title">Devam Eden Siparişler</h5>
+                    <h3 class="text-center display-3">
+                        @await Component.InvokeAsync("OrderInProgress")
+                    </h3>
+                    <a asp-controller="Order" asp-action="Index" class="card-link text-white">Tüm Siparişler</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card bg-success text-white">
+                <div class="card-body text-center">
+                    <h6 class="card-subtitle mb-2">Roller</h6>
+                    <h5 class="card-title">Rol Sayısı</h5>
+                    <h3 class="text-center display-3">
+                        @await Component.InvokeAsync("RoleSummary")
+                    </h3>
+                    <a asp-controller="Role" asp-action="Index" class="card-link text-white">Tüm Roller</a>
+                    <a asp-controller="Role" asp-action="Create" class="card-link text-white">Yeni Rol Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @await Component.InvokeAsync("Showcase", new {page="list"})
+    </div>
+</div>

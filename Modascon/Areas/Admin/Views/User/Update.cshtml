@@ -1,0 +1,50 @@
+﻿@model UserDtoForUpdate
+
+<h2>Edit User</h2>
+<hr />
+<form asp-action="Update" method="post">    
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input name="Id" type="hidden" value="@Model.Id" />
+    <div class="mb-3">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Roller
+        </div>
+        <div class="card-body">
+           @* @foreach (var role in ViewBag.Roles)
+            {
+                <div class="form-check my-2">
+                    <input type="checkbox" name="Roles" id="@role"
+                           value="@role"
+                           checked="@(Model.SelectedRoles.Contains(role))"
+                           class="form-check-input"
+                           @(Model.SelectedRoles.Any(r => r == role) ? "checked": "")
+                           />
+                    <label class="form-check-label" for="@role">@role</label>
+                </div>
+            }*@
+            @foreach (var role in ViewBag.Roles)
+            {
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="SelectedRoles" value="@role" id="@role" @(Model.SelectedRoles.Any(r => r == role) ? "checked": "")>
+                    <label for="@role" class="form-check-label">@role</label>
+                     
+
+                </div>
+
+            }
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

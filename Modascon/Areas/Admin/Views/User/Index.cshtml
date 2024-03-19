@@ -1,0 +1,44 @@
+﻿@model IEnumerable<IdentityUser>
+
+<div class="text-center my-4">
+    <div class="display-6">Users</div>
+</div>
+
+<div class="d-flex justify-content-end my-3">
+    <a class="btn btn-outline-success" asp-action="Create">
+        <span class="bi bi-plus"></span>
+        Create
+    </a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>E-Mail</th>
+            <th>Roles</th>
+            <th>Operations</th>
+            <th style="width: 125px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (IdentityUser user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td user-name="@user.UserName" user-role=""></td>
+                <td>
+                    <div class="btn-group btn-sm">
+                        <a class="btn btn-sm btn-primary" asp-action="Update" asp-route-id="@user.Id">Edit</a>
+                        <a class="btn btn-sm btn-warning" asp-action="ResetPassword" asp-route-id="@user.UserName">Reset Password</a>
+                        <form asp-action="Delete" method="post" onsubmit="return confirm('@user.UserName Kullanıcısı Silinecek. Emin Misiniz?')" style="display: inline-block;">
+                            <input type="hidden" value="@user.Id" name="id">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

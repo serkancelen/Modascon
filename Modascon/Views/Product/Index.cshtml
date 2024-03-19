@@ -1,0 +1,55 @@
+﻿@using Entities.Models;
+@model ProductListViewModel
+
+<div class="row">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("CategoriesMenu")
+        @await Component.InvokeAsync("ProductFilterMenu")
+        <br />
+        <strong>Öne Çıkan Ürünler</strong>
+        <div products="" number="3"></div>
+    </div>
+    <div class="col-md-9 bg-black">
+        <div class="row my-3">
+            @foreach (Product prd in Model.Products)
+            {
+
+                <partial name="_ProductCard" model="@prd" />
+
+            }
+        </div>
+        <div class="pagination-container">
+            <ul class="pagination justify-content-center">
+
+                <li class="page-item">
+                    <a class="page-link btn btn-outline-dark" href="/product?PageNumber=@(Model.Pagination.CurrentPage - 1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+
+                <div>
+                    <div page-model="@Model.Pagination" page-action="Index"
+                         page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-dark" class="btn-group">
+                    </div>
+                </div>
+
+                <li class="page-item">
+                    <a class="page-link btn btn-outline-dark" href="/product?PageNumber=@(Model.Pagination.CurrentPage + 1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section footer
+    {
+    <div>
+        Burası Neresi
+    </div>
+
+
+
+}

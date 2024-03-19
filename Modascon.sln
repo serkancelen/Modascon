@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entiti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{3FFD9F2C-F942-4C7D-BA8F-8279CB5F8DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{6EC90171-88DB-4C94-B2CF-85E3D0C62760}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{3FFD9F2C-F942-4C7D-BA8F-8279CB5F8DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FFD9F2C-F942-4C7D-BA8F-8279CB5F8DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FFD9F2C-F942-4C7D-BA8F-8279CB5F8DC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EC90171-88DB-4C94-B2CF-85E3D0C62760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EC90171-88DB-4C94-B2CF-85E3D0C62760}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EC90171-88DB-4C94-B2CF-85E3D0C62760}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EC90171-88DB-4C94-B2CF-85E3D0C62760}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

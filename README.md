@@ -8,4 +8,16 @@ This e-commerce website allows users to view products, add them to the cart, mak
 - SQL Server 2019
 
 ## Technologies Used
-![Ekran görüntüsü 2024-03-19 222209](https://github.com/serkancelen/Modascon/assets/139682589/d22f310f-d306-4fbf-8a50-14c34966bac0)
+- Asp.Net Core 7.0
+- Entity Framework Core 7.0
+
+## Project Structure
+![Ekran görüntüsü 2024-03-19 222115](https://github.com/serkancelen/Modascon/assets/139682589/96cb1bbf-e5c6-4ae7-a153-8fa194d2c429)
+
+## NuGet Packages
+- AutoMapper (12.0.1)
+- AutoMapper.Extensions.Microsoft.DependencyInjection (12.0.1)
+- Microsoft.EntityFrameworkCore.Design (7.0.14)
+- Microsoft.EntityFrameworkCore.SqlServer (7.0.14)
+- Microsoft.EntityFrameworkCore.Tools (7.0.14)
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore (7.0.15)

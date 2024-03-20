@@ -1,6 +1,5 @@
 using Modascon.Infrastructure.Extensions;
 using Modascon.Models;
-using Presentation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +14,8 @@ new SmtpEmailSender(
 ));
 
 
-builder.Services.AddControllers()
-    .AddApplicationPart(typeof(AssemblyReferance).Assembly);
+//builder.Services.AddControllers()
+//    .AddApplicationPart(typeof(AssemblyReferance).Assembly);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();

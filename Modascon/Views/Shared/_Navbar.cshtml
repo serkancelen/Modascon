@@ -26,7 +26,13 @@
                     <a class="nav-link" asp-page="/Contact">Bize Ulaşın</a>
                 </li>
             </ul>
+
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" aria-current="page" asp-controller="User" asp-action="Index">
+                        <i class="bi bi-person"></i>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" asp-page="/Cart">
                         <span id="boot-icon" class="bi-bag custom-icon"></span> (@await Component.InvokeAsync("CartSummary"))

@@ -22,18 +22,6 @@
             Roller
         </div>
         <div class="card-body">
-           @* @foreach (var role in ViewBag.Roles)
-            {
-                <div class="form-check my-2">
-                    <input type="checkbox" name="Roles" id="@role"
-                           value="@role"
-                           checked="@(Model.SelectedRoles.Contains(role))"
-                           class="form-check-input"
-                           @(Model.SelectedRoles.Any(r => r == role) ? "checked": "")
-                           />
-                    <label class="form-check-label" for="@role">@role</label>
-                </div>
-            }*@
             @foreach (var role in ViewBag.Roles)
             {
                 <div class="form-check">

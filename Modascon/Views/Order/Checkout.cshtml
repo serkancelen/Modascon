@@ -25,6 +25,42 @@
         <input asp-for="GiftWrap" />
         <label>Hediye Paketi Yap</label>
     </div>
+   @* <h4 class="my-3">Ödeme Bilgileri</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="CartName">Kart Üzerindeki İsim</label>
+                <input type="text" class="form-control" id="CartName" asp-for="@Model.CartName" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="CartNumber">Kart Numarası</label>
+                <input type="text" class="form-control" id="CartNumber" asp-for="@Model.CartNumber" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="ExpirationMonth">Son Kullanma Ayı</label>
+                <input type="text" class="form-control" id="ExpirationMonth" asp-for="@Model.ExpirationMonth" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="ExpirationYear">Son Kullanma Yılı</label>
+                <input type="text" class="form-control" id="ExpirationYear" asp-for="@Model.ExpirationYear" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="Cvc">CVC</label>
+                <input type="text" class="form-control" id="Cvc" asp-for="@Model.Cvc" />
+            </div>
+        </div>
+    </div>*@
+
     <div class="text-center">
         <button type="submit" class="btn btn-primary">
             Sipariş Tamamla

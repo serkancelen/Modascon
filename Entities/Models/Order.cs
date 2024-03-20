@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -23,5 +24,13 @@ namespace Entities.Models
         public bool GiftWrap { get; set; }
         public bool Shipped { get; set; }
         public DateTime OrderedAt { get; set; } = DateTime.Now;
+        //[BindNever]
+        //public Cart? Cart { get; set; }
+        //public string? CartName { get; set; }
+        //public string? CartNumber { get; set; }
+        //public string? ExpirationMonth { get; set; }
+        //public string? ExpirationYear { get; set; }
+        //public string? Cvc { get; set; }
+
     }
 }

@@ -12,6 +12,7 @@ namespace Modascon.Infrastructure.Mapper
             CreateMap<ProductDtoForInsertion, Product>();
             CreateMap<ProductDtoForUpdate, Product>().ReverseMap();
             CreateMap<CreateCategoryDto, Category>().ReverseMap();
+            CreateMap<CreateContactDto, Contact>().ReverseMap();
             CreateMap<UserDtoForCreation, IdentityUser>();
             CreateMap<UserDtoForUpdate, IdentityUser>().ReverseMap();
         }

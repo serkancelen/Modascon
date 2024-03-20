@@ -1,5 +1,8 @@
-﻿using Entities.Models;
+﻿using Entities.Dtos;
+using Entities.Models;
+using Iyzipay.Model.V2.Subscription;
 using Microsoft.AspNetCore.Mvc;
+using Modascon.Models;
 using Repositories;
 using Services.Contracts;
 
@@ -21,10 +24,14 @@ namespace Modascon.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([FromForm] Contact contact)
+        public async Task<IActionResult> Index([FromForm] CreateContactDto contactDto)
         {
-            _manager.ContactService.CreateContact(contact);
-            return RedirectToAction("Teşekkürler.");
+            if (ModelState.IsValid)
+            {
+                await _manager.ContactService.CreateContactAsync(contactDto);
+                return RedirectToAction("Index");
+            }
+            return View(contactDto);
         }
     }
 }

@@ -56,6 +56,7 @@ namespace Modascon.Infrastructure.Extensions
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IContactRepository, ContactRepository>();
         }
         public static void ConfigureServiceRegistration (this IServiceCollection services)
         {
@@ -64,6 +65,8 @@ namespace Modascon.Infrastructure.Extensions
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<IOrderService, OrderManager>();
             services.AddScoped<IAuthService, AuthManager>();
+            services.AddScoped<IContactService, ContactManager>();
+
             
         }
 

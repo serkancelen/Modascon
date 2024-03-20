@@ -1,12 +1,12 @@
-﻿@page "/getintouch"
+﻿@model CreateContactDto
 
 <
 <body>
 
     @*<section class="preloader">
-        <div class="spinner">
-            <span class="sk-inner-circle"></span>
-        </div>
+    <div class="spinner">
+    <span class="sk-inner-circle"></span>
+    </div>
     </section>*@
 
     <main>
@@ -30,39 +30,39 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-12">
-                            <h2 class="mb-4">Let's <span>begin</span></h2>
+                        <h2 class="mb-4">Let's <span>begin</span></h2>
 
-                            <form class="contact-form me-lg-5 pe-lg-3" role="form">
+                        <form class="contact-form me-lg-5 pe-lg-3" asp-controller="Contact" asp-action="Index" method="post">
 
-                                <div class="form-floating">
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
+                            <div class="form-floating">
+                                <input asp-for="Name" type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
 
-                                    <label for="name">Full name</label>
-                                </div>
+                                <label asp-for="Name">Full name</label>
+                            </div>
 
-                                <div class="form-floating my-4">
-                                    <input type="email" name="email" id="email" pattern="" class="form-control" placeholder="Email address" required>
+                            <div class="form-floating my-4">
+                                <input asp-for="Email" type="email" name="email" id="email" class="form-control" placeholder="Email address" required>
 
-                                    <label for="email">Email address</label>
-                                </div>
-                                
-                                <div class="form-floating my-4">
-                                    <input type="subject" name="subject" id="subject"class="form-control" placeholder="Subject" required>
+                                <label asp-for="Email">Email address</label>
+                            </div>
 
-                                    <label for="subject">Subject</label>
-                                </div>
+                            <div class="form-floating my-4">
+                                <input asp-for="Subject" type="subject" name="subject" id="subject" class="form-control" placeholder="Subject" required>
 
-                                <div class="form-floating mb-4">
-                                    <textarea id="message" name="message" class="form-control" placeholder="Leave a comment here" required style="height: 160px"></textarea>
+                                <label asp-for="Subject">Subject</label>
+                            </div>
 
-                                    <label for="message">Tell us about the project</label>
-                                </div>
+                            <div class="form-floating mb-4">
+                                <textarea asp-for="Message" id="message" name="message" class="form-control" placeholder="Leave a comment here" required style="height: 160px"></textarea>
 
-                                <div class="col-lg-5 col-6">
-                                    <button type="submit" class="form-control">Send</button>
-                                </div>
-                            </form>
-                        </div>
+                                <label asp-for="Message">Tell us about the project</label>
+                            </div>
+
+                            <div class="col-lg-5 col-6">
+                                <button type="submit" class="form-control">Gönder</button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="col-lg-6 col-12 mt-5 ms-auto">
                         <div class="row">
                             <div class="col-6 border-end contact-info">

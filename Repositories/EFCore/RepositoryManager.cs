@@ -15,15 +15,17 @@ namespace Repositories.EFCore
         private readonly IContactRepository _contactRepository;
         private readonly IOrderRepository _orderRepository;
 
-        public RepositoryManager(IProductRepository productRepository, 
-            RepositoryContext repositoryContext, 
-            ICategoryRepository categoryRepository, 
-            IOrderRepository orderRepository)
+        public RepositoryManager(IProductRepository productRepository,
+            RepositoryContext repositoryContext,
+            ICategoryRepository categoryRepository,
+            IOrderRepository orderRepository,
+            IContactRepository contactRepository)
         {
             _productRepository = productRepository;
             _context = repositoryContext;
             _categoryRepository = categoryRepository;
             _orderRepository = orderRepository;
+            _contactRepository = contactRepository;
         }
 
         public IProductRepository Product => _productRepository;

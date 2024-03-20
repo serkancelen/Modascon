@@ -1,12 +1,8 @@
 ﻿using AutoMapper;
+using Entities.Dtos;
 using Entities.Models;
 using Repositories.Contracts;
 using Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.EFCore
 {
@@ -21,10 +17,10 @@ namespace Services.EFCore
             _mapper = mapper;
         }
 
-        public void CreateContact(Contact contact)
+        public async Task CreateContactAsync(CreateContactDto contactDto)
         {
-            Contact cnt = _mapper.Map<Contact>(contact);
-            _manager.Contact.Create(cnt);
+            Contact contact = _mapper.Map<Contact>(contactDto);
+            _manager.Contact.Create(contact);
             _manager.Save();
         }
 

@@ -1,8 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Entities.Models
+namespace Entities.Dtos
 {
-    public class Contact
+    public class CreateContactDto
     {
         public int Id { get; set; }
 

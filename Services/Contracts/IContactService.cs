@@ -11,6 +11,6 @@ namespace Services.Contracts
     public interface IContactService
     {
         IEnumerable<Contact> GetAllContacts(bool trackChanges);
-        void CreateContact(Contact contact);
+        Task CreateContactAsync(CreateContactDto contactDto);
     }
 }

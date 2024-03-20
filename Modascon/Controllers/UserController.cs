@@ -1,8 +1,6 @@
 ﻿using Entities.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Services.Contracts;
 using System.Security.Claims;
 
 namespace Modascon.Controllers
@@ -18,7 +16,7 @@ namespace Modascon.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Giriş yapan kullanıcının kimliğini al
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             if (userId == null)
             {
@@ -32,7 +30,6 @@ namespace Modascon.Controllers
                 return NotFound();
             }
 
-            // Giriş yapan kullanıcıyı tek bir eleman olarak içeren bir liste oluştur
             var userList = new List<IdentityUser> { user };
 
             return View(userList);
@@ -40,7 +37,7 @@ namespace Modascon.Controllers
 
         public async Task<IActionResult> Update()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Giriş yapan kullanıcının kimliğini al
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             if (userId == null)
             {
@@ -67,7 +64,7 @@ namespace Modascon.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(UserDtoUpdate model)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Giriş yapan kullanıcının kimliğini al
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             if (userId == null || userId != model.Id)
             {

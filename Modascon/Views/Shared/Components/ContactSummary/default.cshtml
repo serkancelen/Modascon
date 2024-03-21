@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Contact>
+
+<div class="container mt-5">
+    <h2 class="text-center">Kullanıcı Mesajları</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var contact in Model)
+                {
+                    <tr>
+                        <td>@contact.Name</td>
+                        <td>@contact.Email</td>
+                        <td>@contact.Subject</td>
+                        <td>@contact.Message</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

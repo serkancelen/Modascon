@@ -5,9 +5,9 @@ namespace Modascon.Models
     public class LoginModel
     {
         private string _returnUrl;
-        [Required(ErrorMessage = "Kullanıcı adı boş bırakılamaz")]
-        public string Name { get; set; }
-        [Required(ErrorMessage = "Şifre boş bırakılamaz")]
+        [Required(ErrorMessage = "E-mail boş bırakılamaz")]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Şifre boş bırakılamaz")]  
         public string Password { get; set; }
         public string ReturnUrl
         {

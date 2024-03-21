@@ -29,6 +29,7 @@ namespace Modascon.Controllers
             if (ModelState.IsValid)
             {
                 await _manager.ContactService.CreateContactAsync(contactDto);
+                TempData["SuccessMessage"] = "Mesajınız Alınmıştır, Teşekkürler.";
                 return RedirectToAction("Index");
             }
             return View(contactDto);

@@ -32,7 +32,7 @@ namespace Modascon.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = await _userManager.FindByNameAsync(model.Name);
+                IdentityUser user = await _userManager.FindByEmailAsync(model.Email);
                 if (user is not null)
                 {
                     await _signInManager.SignOutAsync();

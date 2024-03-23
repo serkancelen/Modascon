@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<IdentityUser>
 
 <div class="text-center my-4">
-    <div class="display-6">Users</div>
+    @foreach (IdentityUser user in Model)
+    {
+        @user.UserName
+    }
 </div>
 
 <table class="table table-bordered">

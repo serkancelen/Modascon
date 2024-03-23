@@ -1,11 +1,3 @@
-/*
-
-Tooplate 2127 Little Fashion
-
-https://www.tooplate.com/view/2127-little-fashion
-
-*/
-
 
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
@@ -327,15 +319,14 @@ strong {
   NAVIGATION               
 -----------------------------------------*/
 .navbar {
-  background: var(--white-color);
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 25px 0;
-  z-index: 2;
-  will-change: transform;
-  transition: transform 300ms linear;
+    background: var(--white-color);
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 15px 0;
+    z-index: 2;
+    will-change: auto;
+    transition: transform 300ms linear;
 }
 
 .navbar span, h2 span, h4 span {
@@ -566,33 +557,33 @@ strong {
 }
 
 @media (min-width: 576px) {
-  .slick-slideshow .slick-dots {
-    max-width: 540px;
-  }
+    .slick-slideshow .slick-dots {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 768px) {
-  .slick-slideshow .slick-dots {
-    max-width: 720px;
-  }
+    .slick-slideshow .slick-dots {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 992px) {
-  .slick-slideshow .slick-dots {
-    max-width: 960px;
-  }
+    .slick-slideshow .slick-dots {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 1200px) {
-  .slick-slideshow .slick-dots {
-    max-width: 1140px;
-  }
+    .slick-slideshow .slick-dots {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 1400px) {
-  .slick-slideshow .slick-dots {
-    max-width: 1320px;
-  }
+    .slick-slideshow .slick-dots {
+        max-width: 100%;
+    }
 }
 
 .slick-slideshow .slick-dots {

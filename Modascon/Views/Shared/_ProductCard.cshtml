@@ -3,20 +3,30 @@
 @using Modascon.Infrastructure.Extensions;
 @model Product
 
-<div class="col-sm-12 col-md-4 my-2 bg-black">
+@*<div class="col-sm-12 col-md-4 my-2 bg-black">
     <div class="card" style="width: 18rem;">
         <div class="card-header text-center">
             @Model.ProductName
 
         </div>
-        <img src="@Model?.ImageUrl" class="card-img-top" alt="...">
+        <img src="@Model?.ImageUrl" class="card-img-top" alt="..." style="height: 200px; width: 100%; object-fit: cover;">
         <div class="card-body">
             <div class="card-text">
                 <div class="text-danger text-center lead p-2 rounded-2">
                     @Model.Price.ToString("C2")
                 </div>
             </div>
-            <p class="card-text">@Model.Summary</p>
+            <p class="card-text">
+                @if (!string.IsNullOrEmpty(Model.Summary) && Model.Summary.Length > 17)
+                {
+                    <span>@Model.Summary.Substring(0, 17)</span>
+                    <a href="@Url.Action("Get", "Product", new { id = Model.Id })" class="text-decoration-none">...</a>
+                }
+                else
+                {
+                    @Model.Summary
+                }
+            </p>
             <div class="d-flex justify-content-center">
                 <div class="btn-group">
                     <a asp-controller="Product" asp-action="Get" asp-route-id="@Model.Id" class="btn btn-outline-secondary rounded-2">
@@ -32,6 +42,41 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div>*@
+<div class="col-lg-4 col-12 mb-3">
+    <div class="product-thumb">
+        <a asp-controller="Product" asp-action="Get" asp-route-id="@Model.Id">
+            <img src="@Model?.ImageUrl" class="card-img-top" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
+        </a>
+
+        <div class="product-top d-flex">
+            <span class="product-alert me-auto">New Arrival</span>
+
+            <a href="#" class="bi-heart-fill product-icon"></a>
+        </div>
+
+        <div class="product-info d-flex">
+            <div>
+                <h5 class="product-title mb-0">
+                    <a asp-controller="Product" asp-action="Get" asp-route-id="@Model.Id" class="product-title-link">@Model.ProductName</a>
+                </h5>
+
+                <p class="card-text">
+                    @if (!string.IsNullOrEmpty(Model.Summary) && Model.Summary.Length > 17)
+                    {
+                        <span>@Model.Summary.Substring(0, 17)</span>
+                        <a href="@Url.Action("Get", "Product", new { id = Model.Id })" class="text-decoration-none">...</a>
+                    }
+                    else
+                    {
+                        @Model.Summary
+                    }
+                </p>
+            </div>
+
+            <small class="product-price text-muted ms-auto mt-auto mb-5">@Model.Price.ToString("C2")</small>
         </div>
     </div>
 </div>

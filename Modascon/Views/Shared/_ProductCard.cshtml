@@ -51,12 +51,6 @@
             <img src="@Model?.ImageUrl" class="card-img-top" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
         </a>
 
-        <div class="product-top d-flex">
-            <span class="product-alert me-auto">New Arrival</span>
-
-            <a href="#" class="bi-heart-fill product-icon"></a>
-        </div>
-
         <div class="product-info d-flex">
             <div>
                 <h5 class="product-title mb-0">
@@ -64,9 +58,9 @@
                 </h5>
 
                 <p class="card-text">
-                    @if (!string.IsNullOrEmpty(Model.Summary) && Model.Summary.Length > 17)
+                    @if (!string.IsNullOrEmpty(Model.Summary) && Model.Summary.Length > 15)
                     {
-                        <span>@Model.Summary.Substring(0, 17)</span>
+                        <span>@Model.Summary.Substring(0, 15)</span>
                         <a href="@Url.Action("Get", "Product", new { id = Model.Id })" class="text-decoration-none">...</a>
                     }
                     else
@@ -80,3 +74,14 @@
         </div>
     </div>
 </div>
+
+<style>
+    .product-thumb {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease; 
+    }
+
+        .product-thumb:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+</style>
